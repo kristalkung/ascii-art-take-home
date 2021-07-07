@@ -30,12 +30,13 @@ class Canvas:
         self.width = width
     
     def print_blank_canvas(self):
-        """Prints the canvas"""
+        """Prints the canvas."""
         for i in range(0, self.height):
             canvas_width = '.' * self.width
             print(canvas_width)
     
     def add_shape(self, shape):
+        """Adds a shape to the canvas and plots it."""
         start_x = shape.start_x
         start_y = shape.start_y
         end_x = shape.end_x
@@ -63,16 +64,8 @@ class Canvas:
             
         #     print(canvas_width)
 
-
-
-
-
     def clear_all_shapes(self):
+        """Clears all shapes on the canvas."""
         
-        if shapes_in_canvas:
-            for shape in shapes_in_canvas:
-                del shape
-        shapes_in_canvas = []
-        print_canvas()
-        #todo
+        self.shape_dict.clear()
 
