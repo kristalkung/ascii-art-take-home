@@ -35,7 +35,7 @@ class Canvas:
     def print_blank_canvas(self):
         """Prints the canvas."""
         for i in range(0, self.height):
-            canvas_width = '.' * self.width
+            canvas_width = ' ' * self.width
             print(canvas_width)
     
     def add_shape(self, shape):
@@ -58,7 +58,7 @@ class Canvas:
         # canvas_rows will contain each row of the canvas
 
         for i in range(0, self.height):
-            x = '.' * self.width
+            x = ' ' * self.width
             canvas_rows.append(x)
         # this is made depending on the given width and height of the canvas
         
@@ -78,7 +78,7 @@ class Canvas:
                     # iterate until we after we hit end_y
                         insert_width = current_shape.end_x - current_shape.start_x
                         remaining_width = self.width - current_shape.end_x
-                        canvas_rows[i] = ('.' * current_shape.start_x) + (current_shape.fill_char * insert_width) + ('.' * remaining_width)
+                        canvas_rows[i] = (' ' * current_shape.start_x) + (current_shape.fill_char * insert_width) + (' ' * remaining_width)
                         # replace row str based on the width; fill in the fill char
 
                         r += 1
@@ -90,23 +90,3 @@ class Canvas:
         """Clears all shapes on the canvas."""
         
         self.shape_dict.clear()
-
-shape1 = Rectangle(1, 1, 2, 2, "$")
-shape2 = Rectangle(0, 0, 3, 3, "*")
-shape3 = Rectangle(3, 3, 4, 4, "%")
-
-canvas = Canvas(5,5)
-
-canvas.add_shape(shape1)
-
-print("")
-print(" -------- ")
-print("")
-
-canvas.add_shape(shape2)
-
-print("")
-print(" -------- ")
-print("")
-
-canvas.add_shape(shape3)
